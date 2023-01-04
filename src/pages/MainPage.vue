@@ -2,7 +2,7 @@
   <div class="container">
     <h1 v-if="!pickedPokemon">Getting pokemons out of their pokeballs...</h1>
     <div class="container" v-else>
-      <h1>Can you guess the Pokemon?</h1>
+      <h2>Can you guess the Pokémon?</h2>
       <PokemonPic :pokeId="pickedPokemon.data.id" :reveal="revealPokemon" />
       <PokemonOptions :pokemons="pokemonsArray" @pick-pokemon="checkAnswer" />
       <h2 class="fade-in message">
@@ -93,6 +93,26 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+
+  h2 {
+    color: #fff;
+    font-size: 22px;
+
+    @media (min-width: 766px) {
+      font-size: 32px;
+    }
+  }
+
+  h3 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+
+    @media (min-width: 766px) {
+      font-size: 32px;
+    }
+  }
 
   button {
     margin-right: 10px;
@@ -112,7 +132,7 @@ export default {
   }
 
   .message {
-    font-size: 18px;
+    font-size: 14px;
 
     @media (min-width: 766px) {
       font-size: 32px;

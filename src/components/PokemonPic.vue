@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 img {
   position: absolute;
-  height: 140px;
+  height: 110px;
 
   @media (min-width: 766px) {
     height: 200px;
@@ -43,7 +43,11 @@ img {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 120px;
+
+  @media (min-width: 766px) {
+    height: 200px;
+  }
 }
 
 .hidden {
