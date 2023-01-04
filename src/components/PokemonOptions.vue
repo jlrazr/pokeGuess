@@ -4,7 +4,8 @@
       <li
         v-for="pokemon in pokemons"
         :key="pokemon.data.id"
-        @click="$emit('pickPokemon', pokemon.data.id)"
+        @click="disableOptions(), $emit('pickPokemon', pokemon.data.id)"
+        :class="[isButtonActive ? 'enabled' : 'disabled']"
       >
         {{ pokemon.data.name }}
       </li>
@@ -19,11 +20,24 @@ export default {
       type: Array,
       required: true,
     },
+  },
 
-    methods: {
-      pickPokemon() {
-        return;
+  data() {
+    return {
+      isButtonActive: {
+        type: Boolean,
+        default: true,
       },
+    };
+  },
+
+  methods: {
+    pickPokemon() {
+      return;
+    },
+
+    disableOptions() {
+      this.isButtonActive = false;
     },
   },
 };
@@ -52,6 +66,12 @@ export default {
       &:hover {
         background: rgba(0, 0, 0, 0.05);
       }
+    }
+
+    .disabled {
+      pointer-events: none;
+      color: darkgray;
+      background: grey;
     }
   }
 }

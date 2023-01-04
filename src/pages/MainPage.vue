@@ -12,6 +12,8 @@
         Play again!
       </button>
     </div>
+    <h3>Score: {{ score }}</h3>
+    <h3>Personal record: {{ record }}</h3>
   </div>
 </template>
 
@@ -35,6 +37,8 @@ export default {
       playerWin: false,
       playerLose: false,
       message: "",
+      score: 0,
+      record: localStorage.getItem("record") || 0,
     };
   },
 
@@ -48,9 +52,12 @@ export default {
       this.revealPokemon = true;
       if (pokemonId === this.pickedPokemon.data.id) {
         this.playerWin = true;
+        this.score++;
         this.message = `Yes! The pokemon is ${this.pickedPokemon.data.name}`;
+        this.setRecord();
       } else {
         this.playerLose = true;
+        this.score = 0;
         this.message = `Sorry, the hidden pokemon was ${this.pickedPokemon.data.name}`;
       }
     },
@@ -61,7 +68,16 @@ export default {
       this.playerWin = false;
       this.playerLose = false;
       this.pokemonsArray = [];
+      this.record = localStorage.getItem("record");
       this.mixPokemonArray();
+    },
+    setRecord() {
+      const currScore = this.score;
+      const currRecord = localStorage.getItem("record");
+
+      if (currScore > currRecord) {
+        localStorage.setItem("record", currScore);
+      }
     },
   },
 
