@@ -64,6 +64,7 @@ export default {
       font-weight: 600;
 
       &:hover {
+        color: #fff;
         background: rgba(0, 0, 0, 0.05);
       }
     }
