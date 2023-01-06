@@ -20,7 +20,7 @@
 <script>
 import PokemonOptions from "@/components/PokemonOptions.vue";
 import PokemonPic from "@/components/PokemonPic.vue";
-import getPokemonOptions from "@/utils/getPokemonOptions.js";
+import { getPokemonOptions } from "@/utils/getPokemonOptions.js";
 
 export default {
   name: "MainPage",

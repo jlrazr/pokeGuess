@@ -25,4 +25,4 @@ const getPokemonOptions = async () => {
   return finalPokemons;
 };
 
-export default getPokemonOptions;
+export { getPokemonOptions, getPokemons, getPokemonData };
