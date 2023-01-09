@@ -35,7 +35,6 @@
     "sass-loader": "^12.0.0"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged",
-    "test:unit": "vue-cli-service test:unit"
+    "pre-commit": "lint-staged"
   }
 }
