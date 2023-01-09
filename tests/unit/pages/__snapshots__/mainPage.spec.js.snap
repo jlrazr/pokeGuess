@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPage Component must match the snapshot 1`] = `
+<div class="container">
+  <h1>Getting pokemons out of their pokeballs...</h1>
+  <h3>Score: 0</h3>
+  <h3>Personal record: 0</h3>
+</div>
+`;
+
+exports[`MainPage Component must match with snapshot after pokemons have been loaded 1`] = `
+<div class="container">
+  <div class="container">
+    <h2>Can you guess the Pokémon?</h2>
+    <pokemon-pic-stub pokeid="150" reveal="false"></pokemon-pic-stub>
+    <pokemon-options-stub pokemons="[object Object],[object Object],[object Object],[object Object]"></pokemon-options-stub>
+    <h2 class="fade-in message"></h2>
+    <!--v-if-->
+  </div>
+  <h3>Score: 0</h3>
+  <h3>Personal record: 0</h3>
+</div>
+`;

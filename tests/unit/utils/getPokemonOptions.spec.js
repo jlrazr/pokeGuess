@@ -27,5 +27,6 @@ describe("getPokemonOptions utilities", () => {
     const getPokemonOptionsOutput = await getPokemonOptions();
     expect(getPokemonOptionsOutput.length).toBe(4);
     expect(getPokemonOptionsOutput[0]).toBeInstanceOf(Object);
+    expect(getPokemonOptionsOutput[0].data.name).toEqual(expect.any(String));
   });
 });

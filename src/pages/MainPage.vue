@@ -48,6 +48,7 @@ export default {
       this.pokemonsArray = await getPokemonOptions();
       this.pickedPokemon = this.pokemonsArray[randomPick];
     },
+
     checkAnswer(pokemonId) {
       this.revealPokemon = true;
       if (pokemonId === this.pickedPokemon.data.id) {
@@ -61,6 +62,7 @@ export default {
         this.message = `Sorry, the hidden pokemon was ${this.pickedPokemon.data.name}`;
       }
     },
+
     newGame() {
       this.revealPokemon = false;
       this.pickedPokemon = null;
@@ -71,6 +73,7 @@ export default {
       this.record = localStorage.getItem("record");
       this.mixPokemonArray();
     },
+
     setRecord() {
       const currScore = this.score;
       const currRecord = localStorage.getItem("record");

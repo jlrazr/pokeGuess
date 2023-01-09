@@ -1,7 +1,12 @@
 <template>
   <div class="img-container">
-    <img class="hidden" :src="imgSrc" alt="Pokemonazo" />
-    <img v-if="reveal" class="fade-in" :src="imgSrc" alt="Pokemonazo" />
+    <img class="hidden" :src="imgSrc" alt="Guess the hidden Pokémon" />
+    <img
+      v-if="reveal"
+      class="fade-in"
+      :src="imgSrc"
+      alt="Guess the hidden Pokémon"
+    />
   </div>
 </template>
 
